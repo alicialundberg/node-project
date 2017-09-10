@@ -1,3 +1,4 @@
+//Skapar moduler som installerats via npm
 var PouchDB = require("pouchdb");
 var bodyParser = require("body-parser")
 var Express = require("express");
@@ -5,34 +6,39 @@ var path = require("path");
 
 var app = Express();
 
-//Skapar en databas variabel med koppling till port 5984
-var database = new PouchDB('http://127.0.0.1:5984/tvshows');
+//Här skapas den lokala databasen, mapp localpouchdb
+var database = new PouchDB('localpouchdb');
 
-//Skapar den lokala databasen
-var localDB = new PouchDB('localpouchdb')
+//Här skapas en remote CouchDB databas som ska synkas mot den lokala databasen
+var remoteDB = 'http://localhost:5984/tvshows/'
 
-//Skapar en remote CouchDB databas som synkas mot PouchDB (lokala databasen)
-var remoteDB = ('http://127.0.0.1:5984/tvshows')
 sync();
 
-//Funktion för att synka databaserna
+//Synkar den lokala PouchDB databasen med CouchDB
 function sync() {
-  var opts = {live:true};
-  localDB.replicate.to(remoteDB, opts);
-  database.replicate.from(remoteDB, opts);
-};
+    var opts = {live: true};
+    database.replicate.to(remoteDB, opts);
+    database.replicate.from(remoteDB, opts);
 
+  }
 //json tolkare och urlencoded tolkare
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//skickar en till tvshows.html
+//Initierar CORS för att servern och browsern ska kunna interagera
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+//Route till servern
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname+'/tvshows.html'));
 });
 
-//Hämtar all data från databasen
-app.get("/tvshows", function (req, res) {
+//Route som hämtar alla dokument från databasen
+app.get("/tvshows", function (req, res, next) {
   database.allDocs({include_docs: true}).then(function(result) {
           res.send(result.rows.map(function(item) {
               return item.doc;
@@ -42,15 +48,15 @@ app.get("/tvshows", function (req, res) {
       });
   });
 
-//Postar ny data till databasen
+//Route som postar ny data till tvshows-databasen
 app.post("/tvshows", function (req, res) {
   database.post(req.body).then(function(result) {
-    res.send(result);
+    res.sendFile(path.join(__dirname+'/tvshows.html'));
   });
 });
 
-//Uppdaterar specifik data och skickar tillbaka all befintlig data från databasem igen
-app.put("/tvshows/:id", (req, res) {
+//Uppdaterar specifik data och returnerar den befintliga datan i databasen
+app.put("/tvshows/:id", function(req, res) {
   database.get(req.params.id).then(function(result) {
           result.title = req.body.title;
           result.seasons = req.body.seasons;
@@ -65,12 +71,13 @@ app.put("/tvshows/:id", (req, res) {
       });
   });
 
-//Raderar specifik data från databasen och skickar sedan all befintlig data från databasen igen
+//Raderar specifik data och returnerar all befintlig data från databasen
 app.delete("/tvshows/:id", function(req, res) {
   database.get(req.body.id).then(function(result) {
       return database.remove(result);
   }).then(function(result) {
         res.send(result);
-})
+  });
+});
 
 app.listen(3000)

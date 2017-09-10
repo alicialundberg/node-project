@@ -4,17 +4,79 @@
     <title> List over TV-shows </title>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,  minimum-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
-
   <body>
-      <form action="http://127.0.0.1:3000/tvshows" method="post">
-        <input type="text" name="title" placeholder="TV-show title">
-        <input type="text" name="seasons" placeholder="Seasons">
-        <input type="text" name="genre" placeholder="Genre">
-        <input type="text" name="ranking" placeholder="IMDB Ranking">
-        <input type="text" name="episode length" placeholder="Episode Length">
-        <input type="submit" value="Submit">
-      </form>
-  </body>
+    <div class="navbar navbar-default">
+    <div class="container">
+        <a class="navbar-brand" href="#">Your Favourite TV-Shows!</a>
+        <div class="nav pull-right">
+          <button type="button" class="btn btn-info navbar-btn" data-toggle="modal" data-target="#myModal">Add TV-Shows</button>
+        </div>
+    </div>
+</div>
 
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" style="text-align:center">Enter info about the TV-Show here!</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-inline" action="http://localhost:3000/tvshows" method="post">
+              <div class="col-md-4 col-md-offset-4 form-group" style="text-align:center">
+                <input type="text" class="form-control" name="title" placeholder="TV-show title">
+                <input type="text" class="form-control" name="seasons" placeholder="Seasons">
+                <input type="text" class="form-control" name="genre" placeholder="Genre">
+                <input type="text" class="form-control" name="ranking" placeholder="IMDB Ranking">
+                <input type="text" class="form-control" name="episodelength" placeholder="Episode Length">
+                <input type="submit" value="Submit">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <table id="showList" class="table">
+          <thead>
+            <tr>
+              <th>TV-Show Title</th>
+              <th>Seasons</th>
+              <th>Genre</th>
+              <th>IMDB Ranking</th>
+              <th>Episode Length</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+      </table>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function() {
+     $.getJSON("http://localhost:3000/tvshows", function(data) {
+       var json = data;
+       for (var i = 0; i < json.length; i++) {
+         var row = $("<tr>");
+          $(row).append("<td>" + json[i].title + "</td>");
+          $(row).append("<td>" + json[i].seasons + "</td>");
+          $(row).append("<td>" + json[i].genre + "</td>");
+          $(row).append("<td>" + json[i].ranking + "</td>");
+          $(row).append("<td>" + json[i].episodelength + "</td>");
+          $(row).append("</tr>");
+          $("#showList tbody").append(row);
+        };
+     });
+   });
+ </script>
 </html>

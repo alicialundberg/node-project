@@ -1,0 +1,162 @@
+{
+  "_id": "02673cc6-0ddf-4e9c-bbd2-5d2533755683",
+  "_rev": "1-ec9b0a93065f4d318eceed3cd49ee043",
+  "title": "Modern Family",
+  "seasons": "10",
+  "genre": "COmedy, Romance",
+  "ranking": "8,5",
+  "episodelength": "22 min"
+}
+{
+  "_id": "1adabf19-c4bb-4e8d-bf41-b471259d9294",
+  "_rev": "1-f2ece9d6c25742febe3a666fd234cd79",
+  "title": "How I Met Your Mother",
+  "seasons": "9",
+  "genre": "Comedy, Romance",
+  "ranking": "8,4",
+  "episodelength": "22 min"
+}
+{
+  "_id": "26a74307-e729-4b7b-88b3-da5de58c0ee9",
+  "_rev": "2-8c96f57e45050dc5661746d8383d6825",
+  "title": "The Walking Dead",
+  "seasons": "8",
+  "genre": "Drama, Horror, Thriller",
+  "ranking": "8,5",
+  "episodelength": "44 min"
+}
+{
+  "_id": "32b6dda8-0ea8-4865-ac86-fa030d014134",
+  "_rev": "1-db2e48928c224472a33eebfa7689938f",
+  "title": "Mr. Robot",
+  "seasons": "3",
+  "genre": "Crime, Drama, Thriller",
+  "ranking": "8,6",
+  "episodelength": "49 min"
+}
+{
+  "_id": "670714fd-056c-4bc9-8c10-008e03fc3b46",
+  "_rev": "1-0391b819fb914aa9b2724931b5704140",
+  "title": "Silicon Valley",
+  "seasons": "5",
+  "genre": "Comedy",
+  "ranking": "8,6",
+  "episodelength": "28 min"
+}
+{
+  "_id": "6d61d3b9-700f-478b-9f39-b34cc9af5ee4",
+  "_rev": "1-6027219a3ea34abea78732d6e77e9d66",
+  "title": "Suits",
+  "seasons": "7",
+  "genre": "Comedy, Drama",
+  "ranking": "8,6",
+  "episodelength": "44 min"
+}
+{
+  "_id": "7d4e6720-5117-4d20-aefe-808b9e15cb81",
+  "_rev": "1-567ace056e654b8caba5af8cb9d343d6",
+  "title": "Big Bang Theory",
+  "seasons": "12",
+  "genre": "Comedy, Romance",
+  "ranking": "8,3",
+  "episodelength": "22 min"
+}
+{
+  "_id": "963fd40b-683a-4999-b618-b7298c04d266",
+  "_rev": "1-77731552cf4a4be588ee16a2785603dc",
+  "title": "Friends",
+  "seasons": "10",
+  "genre": "Comedy, Romance",
+  "ranking": "8,9",
+  "episodelength": "22 min"
+}
+{
+  "_id": "966fab6d-b6f0-4597-a4e5-308511b2e822",
+  "_rev": "1-fea7d5ddecc14b46bc678465908b615e",
+  "title": "Family Guy",
+  "seasons": "16",
+  "genre": "Animation, Comedy",
+  "ranking": "8,2",
+  "episodelength": "22 min"
+}
+{
+  "_id": "b2975a48395d0b0a3910a0e3dd0004c0",
+  "_rev": "6-a86f248beabd16bf2e2db39284b954dd",
+  "title": "Breaking Bad",
+  "seasons": "5",
+  "genre": "Crime, Drama, Thriller",
+  "ranking": "9,5",
+  "episodelength": "49 min"
+}
+{
+  "_id": "b2975a48395d0b0a3910a0e3dd0028a1",
+  "_rev": "3-ad52680607282e29929efd54e5d0e1dc",
+  "title": "The Wire",
+  "seasons": "5",
+  "genre": "Crime, Drama, Thriller",
+  "ranking": "9,3",
+  "episodelength": "59 min"
+}
+{
+  "_id": "b2975a48395d0b0a3910a0e3dd0032c6",
+  "_rev": "2-6517167b29ef2a23289adbfa16a8981f",
+  "title": "White Collar",
+  "seasons": "6",
+  "genre": "Comedy, Crime, Drama",
+  "ranking": "8,3",
+  "episodelength": "40 min"
+}
+{
+  "_id": "b2975a48395d0b0a3910a0e3dd008c8d",
+  "_rev": "2-4ce17386aec287ac514f99dece10fb01",
+  "title": "House of Cards",
+  "seasons": "5",
+  "genre": "Drama",
+  "ranking": "9,0",
+  "episodelength": "51 min"
+}
+{
+  "_id": "b2975a48395d0b0a3910a0e3dd007a5b",
+  "_rev": "2-22b834ff6665bc8101faf48d9e8f307b",
+  "title": "Game of Thrones",
+  "seasons": "7",
+  "genre": "Adventure, Drama, Fantasy",
+  "ranking": "9,5",
+  "episodelength": "57 min"
+}
+{
+  "_id": "b2975a48395d0b0a3910a0e3dd0098db",
+  "_rev": "2-03c195ad9bcaf913fb879a2d627396f9",
+  "title": "The Simpsons",
+  "seasons": "30",
+  "genre": "Comedy",
+  "ranking": "8,8",
+  "episodelength": "22 min"
+}
+{
+  "_id": "b2975a48395d0b0a3910a0e3dd00f07b",
+  "_rev": "1-db5a48ddd3a46f65c8b4b86db3ad5712",
+  "title": "Narcos",
+  "seasons": "4",
+  "genre": "Biography, Crime, Drama",
+  "ranking": "8,9",
+  "episodelength": "49 min"
+}
+{
+  "_id": "ca0379ba-63b9-409e-b28e-68cba3dca80c",
+  "_rev": "1-54f3d7a1f87a4d16993fc3c10a97836e",
+  "title": "Dexter",
+  "seasons": "8",
+  "genre": "Crime, Drama, Mystery",
+  "ranking": "8,8",
+  "episodelength": "53 min"
+}
+{
+  "_id": "b3cc5532-8aa0-44e5-9bbe-ed13c031223d",
+  "_rev": "1-701634480ebb413dbbf087e7179cdbba",
+  "title": "Black Mirror",
+  "seasons": "4",
+  "genre": "Drama, Sci-Fi, Thriller",
+  "ranking": "8,9",
+  "episodelength": "1 h"
+}
